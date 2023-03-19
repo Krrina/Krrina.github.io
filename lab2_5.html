@@ -22,15 +22,19 @@
 
 
     <form action="#" method="post">
-    Пол:
-        <label>
+        <table>
+            <tr>
+    <td> Пол:</td>
+<td> <label>
           <input type="radio" name="level" value="man">
           Мужской
-        </label>
-        <label>
+        </label></td>
+    <td> <label>
           <input type="radio" name="level" value="woman">
          Женский
-        </label>
+        </label></td>
+    </tr>
+    </table>
 </form>
 
 <form action="#" method="post">
@@ -80,20 +84,25 @@
 </form>
 
 <form action="#" method="post">
-    Обо мне
-<label>
-    <textarea name="comment" cols="40" rows="3" value="Напишите коротко о себе"></textarea>
-  </label>
-
-  <div>
-    <input type="submit" value="Готово">
-    <input type="reset" value="Очистить">
-  </div>
+    <table>
+        <tr>
+    <td>Обо мне</td> 
+<td> <label>
+    <textarea name="comment" cols="40" rows="3">Напишите коротко о себе</textarea>
+  </label></td> 
+        </tr>
+    <tr>
+    <td><input type="submit" value="Готово"></td>  
+<td><input type="reset" value="Очистить"></td>  
+</tr>
+</table>
 </form>
-
-<form action="index.html" method="get">
-    <input type="submit" value="Назад">
-  </form>
-
+    <form action="index.html" method="get">
+        <table>
+            <tr>
+    <td><input type="submit" value="Назад"></td>
+        </tr>
+    </table>
+    </form>
 </body>
 </html>
