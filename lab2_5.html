@@ -11,13 +11,15 @@
     <table>
         <tr>
             <td><label for="em">E-mail</label>  </td> 
-            <td><input type="email" name="email" id="em"></td>
+            <td><input type="email" name="email" id="em" value="Введите E-mail"></td>
         </tr>
         <tr>
             <td><label for="ps">Пароль</label>  </td> 
-            <td><input type="password" name="password" id="ps"></td>
+            <td><input type="password" name="password" id="ps" value="Введите пароль"></td>
         </tr>
     </table>
+</form>
+
 
     <form action="#" method="post">
     Пол:
@@ -31,9 +33,67 @@
         </label>
 </form>
 
+<form action="#" method="post">
+    <table>
+        <tr>
+      <td><label for="ye">Год рождения</label></td>
+    <td><input type="number" min="1900" max="2099" step="1" value="2018" id="ye"></td>
+    <td>-й</td>
+    </tr>
+    </table>
+</form>
 
-      
+<form action="#" method="post">
+    <table>
+<tr>
+    <td rowspan="5">Я знаю</td>
+<td><label>
+    <input type="checkbox" name="RUS"  value="know">
+    Русский
+</label></td>
+</tr>
+<tr>
+<td><label>
+    <input type="checkbox" name="SPA"  value="know">
+    Испанский
+</label></td>
+</tr>
+<tr>
+<td><label>
+    <input type="checkbox" name="GER"  value="know">
+    Немецкий
+</label></td>
+</tr>
+<tr>
+<td><label>
+    <input type="checkbox" name="ENG"  value="know">
+   Английский
+</label></td>
+</tr>
+<tr>
+<td><label>
+    <input type="checkbox" name="CHI"  value="know">
+    Китайский
+</label></td>
+</tr>
+</table>
+</form>
 
+<form action="#" method="post">
+    Обо мне
+<label>
+    <textarea name="comment" cols="40" rows="3" value="Напишите коротко о себе"></textarea>
+  </label>
+
+  <div>
+    <input type="submit" value="Готово">
+    <input type="reset" value="Очистить">
+  </div>
+</form>
+
+<form action="index.html" method="get">
+    <input type="submit" value="Назад">
+  </form>
 
 </body>
 </html>
