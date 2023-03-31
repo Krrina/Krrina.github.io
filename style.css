@@ -1,0 +1,17 @@
+
+   body {
+            background: rgb(28, 28, 28);
+            color: rgb(252, 252, 252);
+        }
+    h1, h2{
+      text-align:right; 
+      color: rgb(184, 48, 48); 
+      font-family: sans-serif; 
+    }
+    p{
+      text-align:right;
+    }
+    em{
+      color: rgb(66, 156, 66); 
+
+    }
