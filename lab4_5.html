@@ -12,22 +12,25 @@
 			}
 			
 			.menu {
-					width: 250px;
+                padding: 5px;
+					width: 220px;
 					background: #fff;
 			}
 			
 			.menu ul {
-				padding: 5px;
-           	 	margin: 15px;
+                padding: 1px;
+                margin: 15px;
                 list-style: none;
 			}
 			
-			
+            .menu ul li:hover li {
+				display: block;}
+
             .menu li:before {
                 width: 4px;
 				content: '\f056';
                 font-family: FontAwesome;
-				color: rgb(166, 164, 236);
+				color: rgb(137, 181, 234);
 				margin-right: 10px;
 				height: 16px;	
 				width: 16px;
@@ -35,6 +38,11 @@
 				position: absolute;
             }
 			
+            .menu li a:hover {
+            background-color:rgb(185, 213, 248);
+            transition: background-color 1s, transform 1.5s;
+            }
+
 			.menu li a {
 					color: rgb(111, 146, 189); 
 			}
@@ -43,10 +51,15 @@
 			.menu li li:before{
                 content: '\f10c';
                 background-position: -10px -10px;
-                left: 20px;
-                margin-left: 10px;
+                left: 2px;
+                margin-left: 6px;
 			}
-			
+
+
+                .menu li li { 
+                margin-left: -20px;
+                display: none;	
+			}
 
 	</style>
 </head>
