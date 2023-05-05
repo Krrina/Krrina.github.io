@@ -1,6 +1,10 @@
 'use strict'; 
 let age=20
 let gender=2
-if (age>19 & gender == 2){
-    alert('выполнится, если условие истинное (true)');
+let phrase = prompt('Скажи слово друг и заходи')
+
+if (phrase === 'Друг') {
+  alert('Привет')
+} else {
+  alert('Я тебя не знаю')
 }
