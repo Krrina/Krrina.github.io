@@ -7,4 +7,3 @@
 //} else {
    // console.log('Я тебя не знаю')
 //}
-console.log('Я тебя не знаю')
