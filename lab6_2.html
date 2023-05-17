@@ -10,26 +10,35 @@
     display: table;
     clear: both;
 }
+
+html,
+body {
+	height: 100%;
+}
+
+.wrapper {
+			position: relative;
+			width: 800px;
+			min-height: 100%;
+			margin: 0 auto;
+			background: rgb(255, 255, 255);
+		}
+
 #container{
     background: rgb(255, 255, 255);
-    width: 800px;
-    height: 400px;
-    margin: auto auto;
-	border: 10px solid #ffffff;
+	padding-bottom: 90px;
 }
 #header{
-    width:780px;
     background-color: rgb(211, 234, 244);
     height: 100px;
 	border: 10px solid #ffffff;
 }
 #left{
-    background-image: url("left.png");
-    float: left;
-    width: 200px;
+background-image: url("left.png");
+float: left;
+width: 200px;
     height: 300px;
     border: 10px solid #ffffff;
-    margin-right: 30px;
 }
 #center{
 	width: 600px;
@@ -43,29 +52,25 @@
     width: 200px;
     height: 300px;
     border: 10px solid #ffffff;
-
 }
-
 #footer{
-    position: fixed;
     background-color: rgb(233, 206, 253);
-    height: 100px;
-    border: 10px solid #ffffff;
-    left: 0;
-    bottom: 0;
-    padding:10px;
-	height: 80px;
-    width:780px;
+    position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 80px;
+
 }
-
-
 li{
-    list-style: none;  
     list-style-image: url(plus.png); 
 }
 </style>
 </head>
 <body>
+
+<div class="wrapper">
+
 <div id="container">
 	<div id="header"></div>
 	<div id="outer">
@@ -82,7 +87,8 @@ li{
 			<div id="end" class="clearfix"></div>
 		</div>
 	</div>
-	<div id="footer"></div>
+	<div id="footer"> </div>
+</div>
 </div>
 </body>
 </html>
