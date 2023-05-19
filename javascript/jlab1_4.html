@@ -12,12 +12,14 @@
 <body>
   <script>
    "use strict"
-   let num = prompt("Введите число, большее 100 или нажмите esc", "");
-   if(num < 101){
-   do{
-    num = prompt("Введите число, большее 100 или нажмите esc", "");
-   }while (num < 100 && num);
-}
+   let num = prompt("Введите число", "");
+   prostoe:
+   for (let i = 2; i <= num; i++){
+    for (let j = 2; j < i; j++){
+        if( i % j == 0) continue prostoe; 
+   }
+   console.log(i);
+   }
   </script>
 </body>
 </html>
