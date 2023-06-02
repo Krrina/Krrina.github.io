@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> плейсхолдер-подсказкa</title>
+    <style>
+        [contenteditable]:empty:before {
+            content: attr(data-placeholder);
+            color: rgb(26, 128, 217);
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" data-placeholder="Введите ваше имя..." class="placeholder">
+    <input type="email" data-placeholder="Введите ваш email..." class="placeholder">
+    
+   <script>
+      var placeholders = document.querySelectorAll('[data-placeholder]'); // выбираем все инпуты с атрибутом data-placeholder
+
+for (var i = 0; i < placeholders.length; i++) {
+  var input = placeholders[i];
+  var placeholderText = input.getAttribute('data-placeholder'); // получаем текст плейсхолдера из атрибута
+  input.value = placeholderText; // ставим плейсхолдер в инпут
+  input.classList.add('placeholder'); // добавляем класс placeholder, чтобы плейсхолдер был синим
+  input.addEventListener('focus', onInputFocus); // при нажатии на инпут вызываем функцию onInputFocus
+  input.addEventListener('blur', onInputBlur); // при потере фокуса вызываем функцию onInputBlur
+}
+
+function onInputFocus(e) {
+  var input = e.target;
+  var placeholderText = input.getAttribute('data-placeholder');
+  if (input.value === placeholderText) { // если инпут содержит текст плейсхолдера
+    input.value = ''; // очищаем инпут
+  }
+  input.classList.remove('placeholder'); // убираем класс placeholder, чтобы плейсхолдер был скрыт
+}
+
+function onInputBlur(e) {
+  var input = e.target;
+  var placeholderText = input.getAttribute('data-placeholder');
+  if (input.value === '') { // если инпут пустой
+    input.value = placeholderText; // ставим плейсхолдер обратно
+    input.classList.add('placeholder'); // добавляем класс placeholder, чтобы плейсхолдер был синим
+  }
+}
+    </script>
+
+
+</body>
+
+</html>
