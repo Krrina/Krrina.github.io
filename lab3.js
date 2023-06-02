@@ -18,6 +18,31 @@
     return lowerStr.includes("viagra") || lowerStr.includes("xxx"); //проверяем, метод includes() возвращает true или false 
  }
 
-export function truncate(str){
-    
+export function truncate(str, maxlength) {
+    if (str.length > maxlength) {
+      return str.slice(0, maxlength - 1) + '…'; //обрезает строку str до длины, указанной в переменной maxlength, и добавляет в конец троеточие
+    }
+    return str;
+  }
+
+export function camelize(str){
+    return str
+    .split("-") // разбивает 'var-test-text' на массив [var test text]
+    .map(
+      // первый элемент: просто вернуть как есть
+      // остальные элементы: сделать первую букву заглавной, для этого используем функцию ucFirst
+      (word, index) => index == 0 ? word : ucFirst(word)
+    )
+    .join(""); // соединяет [var test text] в 'varTestText'
+}
+
+export function fibs(n){
+    let fibArr = [0n, 1n]; //создает массив "fibArr", который представляет собой последовательность Фибоначчи из первых n чисел
+    for (let i = 2; i < n; i++) { //вычисляются следующие (n-2) элемента массива, используя формулу последовательности Фибоначчи
+      fibArr.push(fibArr[i-1] + fibArr[i-2]);//метод push добавляет значения конец массива 
+    }
+    return fibArr;
+}
+
+export function  arrReverseSorted(n){
 }
