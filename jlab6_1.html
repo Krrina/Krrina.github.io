@@ -11,14 +11,14 @@
 	<div id="text">Текст</div>
 
 	<script>
-    let hider = document.getElementById('hider');
-let text = document.getElementById('text');
+    let hider = document.getElementById('hider'); //находим элементы кнопки и текста пео id
+    let text = document.getElementById('text');
 
 hider.onclick = function() {
-  if (text.style.display === 'none') {
+  if (text.style.display === 'none') {//если оно равно `'none'`, то мы меняем на `'block'`, а значение на кнопке меняем на `'Спрятать текст'
     text.style.display = 'block';
     hider.value = 'Спрятать текст';
-  } else {
+  } else {//иначе мы меняем на `'none'` и `'Показать текст'` соответственно
     text.style.display = 'none';
     hider.value = 'Показать текст';
   }
