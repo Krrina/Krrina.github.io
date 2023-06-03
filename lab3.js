@@ -9,9 +9,9 @@
  }
   
  export function ucFirst(str){
-    if (!str) return str; //если аргумент пустой или его нет, то возвращается без изменений 
-    else return str[0].toUpperCase() + str.slice(1); //иначе возвращается строка с замененной первой буквой с помощью метода toUpperCase()
- }
+  if (!str) return str; //если аргумент пустой или его нет, то возвращается без изменений 
+  else return str[0].toUpperCase() + str.slice(1); //иначе возвращается строка с замененной первой буквой с помощью метода toUpperCase()
+}
 
  export function checkSpam(str){
     let lowerStr = str.toLowerCase(); //приводим к нижнему регистру 
