@@ -1,5 +1,10 @@
 "use strict";
 
+/**
+ * @param {number} num - возводимое число в степень
+ * @return {number} - возвращает дробную часть
+ */
+
   export function getDecimal(num) {
     if (num<0){
         return num - Math.floor(num); //вычитается из num округленное вниз число 
@@ -8,15 +13,31 @@
             } else return 0; // если точки нет, то дробная часть равна 0
  }
   
+/**
+ * @param {string} str - входная строка
+ * @return {string} - Строка с первой буквой, написанной с заглавной буквы
+ */
+
  export function ucFirst(str){
   if (!str) return str; //если аргумент пустой или его нет, то возвращается без изменений 
   else return str[0].toUpperCase() + str.slice(1); //иначе возвращается строка с замененной первой буквой с помощью метода toUpperCase()
 }
 
+/** 
+* @param {string} str - Строка для проверки.
+* @returns {boolean} - Возвращает true, если строка содержит слова "viagra" или "xxx", иначе - false.
+*/
+
  export function checkSpam(str){
     let lowerStr = str.toLowerCase(); //приводим к нижнему регистру 
     return lowerStr.includes("viagra") || lowerStr.includes("xxx"); //проверяем, метод includes() возвращает true или false 
  }
+
+/**
+  * @param {string} str - строка, которую нужно обрезать
+  * @param {number} maxlength - максимальная длина строки
+  * @return {string} - обрезанная строка или исходная строка, если ее длина не превышает максимальную
+ */
 
 export function truncate(str, maxlength) {
     if (str.length > maxlength) {
@@ -24,6 +45,12 @@ export function truncate(str, maxlength) {
     }
     return str;
   }
+
+/**
+ * 
+ * @param {*} str Строка для преобразования
+ * @returns {string} соединяет [var test text] в 'varTestText'
+ */
 
 export function camelize(str){
     return str
@@ -44,6 +71,11 @@ export function camelize(str){
     return fibArr;
 }*/
 
+/**
+ * @param {number} n - Число, до которого необходимо вычислить последовательность Фибоначчи
+ * @return {Array} - Массив, содержащий последовательность Фибоначчи с точностью до n
+ */
+
 import { fib } from './lab2_m.js'
 
 export function fibs(n) {
@@ -54,12 +86,23 @@ export function fibs(n) {
   return fibArr;
 } 
 
+/**
+ * 
+ * @param {*} arr Исходный массив.
+ * @returns {Array} - Отсортированный массив.
+ */
 
 export function  arrReverseSorted(arr){
     return arr.slice().sort(function(a, b) { //slice() создает копию исходного массива, метод sort() сортирует новый массив в порядке убывания с помощью функции сравнения
         return b - a;//принимает два аргумента a и b и возвращает результат вычисления b - a. Если результат вычисления отрицательный, то элемент a будет располагаться перед элементом b в массиве
     });
 }
+
+/**
+ * 
+ * @param {*} arr массив, который нужно обработать
+ * @returns {array}  массив с уникальными значениями
+ */
 
 export function unique (arr){
     return Array.from(new Set(arr)); //Set - это объект, который содержит только уникальные значения любого типа данных, Array.from() - это статический метод массива, который создает новый массив из любого объекта, который похож на массив или итерируемый 
