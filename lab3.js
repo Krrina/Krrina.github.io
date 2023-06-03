@@ -36,13 +36,24 @@ export function camelize(str){
     .join(""); // соединяет [var test text] в 'varTestText'
 }
 
-export function fibs(n){
+/*export function fibs(n){
     let fibArr = [0n, 1n]; //создает массив "fibArr", который представляет собой последовательность Фибоначчи из первых n чисел
     for (let i = 2; i < n; i++) { //вычисляются следующие (n-2) элемента массива, используя формулу последовательности Фибоначчи
       fibArr.push(fibArr[i-1] + fibArr[i-2]);//метод push добавляет значения конец массива 
     }
     return fibArr;
-}
+}*/
+
+import { fib } from './lab2_m.js'
+
+export function fibs(n) {
+  let fibArr = [];
+  for (let i = 0; i < n; i++) {
+    fibArr.push(fib(i));
+  }
+  return fibArr;
+} 
+
 
 export function  arrReverseSorted(arr){
     return arr.slice().sort(function(a, b) { //slice() создает копию исходного массива, метод sort() сортирует новый массив в порядке убывания с помощью функции сравнения
