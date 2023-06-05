@@ -1,6 +1,7 @@
 "use strict";
 
 /**
+ * возвращает дробную часть числа num
  * @param {number} num - возводимое число в степень
  * @return {number} - возвращает дробную часть
  */
@@ -14,6 +15,7 @@
  }
   
 /**
+ * возвращает строку str с заглавным первым символом
  * @param {string} str - входная строка
  * @return {string} - Строка с первой буквой, написанной с заглавной буквы
  */
@@ -24,6 +26,7 @@
 }
 
 /** 
+* возвращает true, если строка str содержит 'viagra' или 'XXX', а иначе false
 * @param {string} str - Строка для проверки.
 * @returns {boolean} - Возвращает true, если строка содержит слова "viagra" или "xxx", иначе - false.
 */
@@ -34,6 +37,7 @@
  }
 
 /**
+ * проверяет длину строки str, и если она превосходит maxlength – заменяет конец str на символ многоточие "…"
   * @param {string} str - строка, которую нужно обрезать
   * @param {number} maxlength - максимальная длина строки
   * @return {string} - обрезанная строка или исходная строка, если ее длина не превышает максимальную
@@ -47,9 +51,9 @@ export function truncate(str, maxlength) {
   }
 
 /**
- * 
- * @param {*} str Строка для преобразования
- * @returns {string} соединяет [var test text] в 'varTestText'
+ * преобразует строку вида 'var-test-text' в 'varTestText'
+ * @param {string} str - Строка для преобразования
+ * @returns {string} - соединяет [var test text] в 'varTestText'
  */
 
 export function camelize(str){
@@ -72,11 +76,18 @@ export function camelize(str){
 }*/
 
 /**
+ * возвращает n-е число Фибоначчи
  * @param {number} n - Число, до которого необходимо вычислить последовательность Фибоначчи
- * @return {Array} - Массив, содержащий последовательность Фибоначчи с точностью до n
+ * @return {array} - Массив, содержащий последовательность Фибоначчи с точностью до n
  */
 
 import { fib } from './lab2_m.js'
+
+/**
+ * для натурального n возвращает массив, заполненный числами Фибоначчи до n-го (не включая его)
+ * @param {number} n -  число, до которого должен быть вычислен массив чисел Фибоначчи
+ * @returns {array} - массив чисел Фибоначчи с точностью до заданного числа
+ */
 
 export function fibs(n) {
   let fibArr = [];
@@ -87,9 +98,9 @@ export function fibs(n) {
 } 
 
 /**
- * 
- * @param {*} arr Исходный массив.
- * @returns {Array} - Отсортированный массив.
+ * принимает неупорядоченный массив чисел arr и возвращает массив из тех же элементов
+ * @param {array} arr - Исходный массив.
+ * @returns {array} - Отсортированный массив.
  */
 
 export function  arrReverseSorted(arr){
@@ -99,9 +110,9 @@ export function  arrReverseSorted(arr){
 }
 
 /**
- * 
- * @param {*} arr массив, который нужно обработать
- * @returns {array}  массив с уникальными значениями
+ * вернёт массив уникальных, не повторяющихся значений массива arr
+ * @param {array} arr - массив, который нужно обработать
+ * @returns {array} - массив с уникальными значениями
  */
 
 export function unique (arr){
