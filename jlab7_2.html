@@ -7,45 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> плейсхолдер-подсказкa</title>
     <style>
-     .placeholder {
-  color: #80a1f2;
-}
+		.placeholder::-webkit-input-placeholder {
+			color: blue; 
+		}
+
+		div {
+			color: blue;
+			font-size: 12px; 
+		}
     </style>
 </head>
 
 <body>
 
-    <input type="email" data-placeholder="Введите ваш email..." class="placeholder">
+  <div></div>
+  <input type="text" class="placeholder" placeholder="Введите текст">
     
    <script>
-      var placeholders = document.querySelectorAll('[data-placeholder]'); // выбираем все инпуты с атрибутом data-placeholder
 
-for (var i = 0; i < placeholders.length; i++) {
-  var input = placeholders[i];
-  var placeholderText = input.getAttribute('data-placeholder'); // получаем текст плейсхолдера из атрибута
-  input.value = placeholderText; // ставим плейсхолдер в инпут
-  input.classList.add('placeholder'); // добавляем класс placeholder, чтобы плейсхолдер был синим
-  input.addEventListener('focus', onInputFocus); // при нажатии на инпут вызываем функцию onInputFocus
-  input.addEventListener('blur', onInputBlur); // при потере фокуса вызываем функцию onInputBlur
-}
+let input = document.querySelector(".placeholder");
+		let div = document.querySelector("div");//выбирает элементы input и div с помощью метода querySelector
 
-function onInputFocus(e) {
-  var input = e.target;
-  var placeholderText = input.getAttribute('data-placeholder');
-  if (input.value === placeholderText) { // если инпут содержит текст плейсхолдера
-    input.value = ''; // очищаем инпут
-  }
-  input.classList.remove('placeholder'); // убираем класс placeholder, чтобы плейсхолдер был скрыт
-}
+		input.onfocus = function () {
+			div.innerHTML = input.getAttribute("placeholder");
+			input.setAttribute("placeholder", "");//при фокусировке на поле ввода, добавляется текст, указанный в атрибуте placeholder, внутрь div, а сам атрибут удаляется, чтобы текст внутри поля ввода и div совпадал
+		};
 
-function onInputBlur(e) {
-  var input = e.target;
-  var placeholderText = input.getAttribute('data-placeholder');
-  if (input.value === '') { // если инпут пустой
-    input.value = placeholderText; // ставим плейсхолдер обратно
-    input.classList.add('placeholder'); // добавляем класс placeholder, чтобы плейсхолдер был синим
-  }
-}
+		input.onblur = function () {
+			input.setAttribute("placeholder", div.innerHTML);
+			div.innerHTML = "";//При потере фокуса происходит обратная операция: текст из div переносится в атрибут placeholder input, а содержимое div очищается
+		};
+
     </script>
 
 
