@@ -1,47 +1,45 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 
 <head>
-  <link type="text/css" rel="stylesheet" href="my.css">
-  <meta charset="utf-8">
+	<meta charset="utf-8">
+	<title>Lab7_3</title>
 </head>
 
 <body>
+	<div>Текст..</div>
 
-  <div contenteditable="true">Нажмите Ctrl+E, чтобы редактировать</div>
+	<script>
+		'use strict';
+		let text;
+		document.addEventListener('keydown', function (event) {
+			if (event.code == 'KeyE' && (event.ctrlKey || event.metaKey)) {
+				event.preventDefault();
+				let textarea = document.createElement("textarea");
+				let div = document.querySelector("div");
+				text = div.innerHTML;
+				textarea.value = div.innerHTML;
+				div.parentNode.replaceChild(textarea, div);
+				textarea.focus();
+			}
+			else if (event.code == 'KeyS' && (event.ctrlKey || event.metaKey)) {
+				event.preventDefault();
+				let textarea = document.querySelector("textarea");
+				let div = document.createElement("div");
+				div.innerHTML = textarea.value;
+				textarea.parentNode.replaceChild(div, textarea);
+			}
+			else if (event.code == 'Escape') {
+				event.preventDefault();
+				let textarea = document.querySelector("textarea");
+				let div = document.createElement("div");
+				if (text)
+					div.innerHTML = text;
+				textarea.parentNode.replaceChild(div, textarea);
+			}
+		});
 
-  <script>
-'use strict';
-document.addEventListener("keydown", function(event){
-  if(event.ctrlKey && event.key === "e"){
-    event.preventDefault(); // отменяем стандартное поведение
-    let div = event.target;
-    let ta = document.createElement("textarea"); // создаем <textarea>
-    ta.value = div.innerHTML; // передаем содержимое <div> в <textarea>
-    div.replaceWith(ta); // заменяем <div> на <textarea>
-    
-   document.addEventListener("keydown", function(event1){
-      if(event1.ctrlKey && event1.key === "s"){
-        event1.preventDefault(); // отменяем стандартное поведение
-        let newDiv = document.createElement("div"); // создаем новый <div>
-        newDiv.innerHTML = ta.value; // передаем содержимое <textarea> в <div>
-        ta.replaceWith(newDiv); // заменяем <textarea> на <div>
-      }
-    });
-    
-
-    // обработчик события для отмены изменений при нажатии Esc
-    document.addEventListener("keydown", function(event2){
-      if(event2.key === "Escape"){
-        event2.preventDefault(); // отменяем стандартное поведение
-        div.innerHTML = ta.value; // возвращаем исходное содержимое в <div>
-        ta.replaceWith(div); // заменяем <textarea> на <div>
-      }
-    });
-  }
-
-});
-  </script>
-
+	</script>
 </body>
+
 </html>
